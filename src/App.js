@@ -1,24 +1,27 @@
-import logo from './logo.svg';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import { useState } from 'react';
+
 import './App.css';
 
+import AppRouter from './Config/Approuter';
+import Home from './Screens/Home';
+import SignUp from './Screens/Signup';
+import AdminHome from './Screens/Aminscreens/Adminhome';
+
 function App() {
+  const [userType, setUserType] = useState('');
+
+  const handleSignup = (selectedUserType) => {
+    setUserType(selectedUserType);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <>
+  
+   <AppRouter/>
+   
+   </>
   );
 }
 
